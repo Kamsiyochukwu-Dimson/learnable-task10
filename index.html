@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+        
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="Enter new task">
+            <input type="date" id="dueDateInput" required>
+            <button onclick="addTodo()" class="btn-primary">Add Task</button>
+        </div>
+    
+        <div class="controls">
+            <div class="input-group">
+                <input type="text" id="updateTaskInput" placeholder="New task text">
+                <input type="number" id="updateIdInput" placeholder="Todo ID">
+                <button onclick="updateTodo()" class="btn-success">Update Task</button>
+            </div>
+            
+            <div class="input-group">
+                <button onclick="clearCompleted()" class="btn-danger">Clear Completed</button>
+                <select id="filterSelect" onchange="filterTodos()" class="filter-select">
+                    <option value="all">All Tasks</option>
+                    <option value="completed">Completed</option>
+                    <option value="active">Active</option>
+                </select>
+            </div>
+        </div>
+    
+        <div id="errorMessage" class="error"></div>
+        <div id="todoList"></div>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
